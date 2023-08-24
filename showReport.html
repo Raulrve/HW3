@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+   <body style="text-align: center">
+        <h1>Top Restaurants in Town</h1>
+      <table border = 1 style="margin: auto">
+         <thead>
+            <td>Restaurant</td>
+            <td>Food</td>
+            <td>Service</td>
+            <td>Ambience</td>
+            <td>Price</td>
+            <td>Rating</td>
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["Restaurant"]}}</td>
+               <td>{{row["ROUND(avg(Food), 1)"]}}</td>
+               <td> {{ row["ROUND(avg(Service), 1)"]}}</td>
+               <td> {{ row["ROUND(avg(Ambience), 1)"]}}</td>
+               <td> {{ row["ROUND(avg(Price), 1)"]}}</td>
+               <td> {{ row["ROUND(avg(Overall), 1)"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+        <br>
+      <a href = "/">Back to Home</a>
+
+   </body>
+</html>
